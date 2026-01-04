@@ -1,8 +1,8 @@
-export default function Home() {
+export default function About() {
     return(
         <>
             <h1 className="title">
-            Hello world! ssss
+                About Page
             </h1>
         </>
     );

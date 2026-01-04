@@ -1,0 +1,14 @@
+FROM node:20-alpine
+
+WORKDIR /var/www
+
+# Copy package files
+COPY package.json package-lock.json* ./
+
+# Install dependencies
+RUN npm ci --no-audit --progress=false
+
+# Copy the rest of the application
+COPY . .
+
+CMD ["npm", "run", "dev"]

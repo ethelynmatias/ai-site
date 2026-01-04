@@ -17,4 +17,11 @@ export default defineConfig({
             '@' : '/resources/js'
         },
     },
+    server: {
+        host: '0.0.0.0',  // Allow connections from outside container
+        port: 5173,
+        hmr: {
+            host: 'localhost',  // For Docker networking
+        },
+    },
 });
