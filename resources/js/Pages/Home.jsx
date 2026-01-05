@@ -18,10 +18,10 @@ export default function Home({ name }) {
     return(
         <>
             <section id="home">
-                <div class="gap-18 md:pt-45 lg:gap-35 lg:pt-47.5 flex h-full flex-col justify-between bg-[url('../../img/free-layer-blur.png')] bg-cover bg-center bg-no-repeat py-8 pt-40 sm:py-16 md:gap-24 lg:py-24">
-                    <div class="mx-auto flex max-w-[1280px] flex-col items-center gap-6 justify-self-center px-4 text-center sm:px-6 lg:px-8">
+                <div className="gap-18 md:pt-45 lg:gap-35 lg:pt-47.5 flex h-full flex-col justify-between bg-[url('../../img/free-layer-blur.png')] bg-cover bg-center bg-no-repeat py-8 pt-40 sm:py-16 md:gap-24 lg:py-24">
+                    <div className="mx-auto flex max-w-[1280px] flex-col items-center gap-6 justify-self-center px-4 text-center sm:px-6 lg:px-8">
 
-                        <h1 class="text-base-content z-1 relative text-5xl font-bold leading-[1.15] max-md:text-2xl md:max-w-3xl">
+                        <h1 className="text-base-content z-1 relative text-5xl font-bold leading-[1.15] max-md:text-2xl md:max-w-3xl">
                             <span>
                             Find the Perfect AI Tools
                             <br />
@@ -37,10 +37,10 @@ export default function Home({ name }) {
                             </defs>
                             </svg>
                         </h1>
-                        <p class="text-base-content/80 max-w-3xl">From automation to analytics, discover AI tools tailored to your needs. Make informed decisions with expert insights and user reviews.</p>
-                        <a href="#" class="btn btn-primary btn-gradient btn-lg">
+                        <p className="text-base-content/80 max-w-3xl">From automation to analytics, discover AI tools tailored to your needs. Make informed decisions with expert insights and user reviews.</p>
+                        <a href="#" className="btn btn-primary btn-gradient btn-lg">
                             Get Started
-                            <span class="icon-[tabler--arrow-right] size-5 rtl:rotate-180"></span>
+                            <span className="icon-[tabler--arrow-right] size-5 rtl:rotate-180"></span>
                         </a>
                     </div>
                 </div>

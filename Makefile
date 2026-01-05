@@ -4,7 +4,7 @@ build:
 
 up:
 	@echo "Setting up docker"
-	@docker compose up -d
+	@docker compose up
 
 container:
 	@echo "Accessing docker container"
