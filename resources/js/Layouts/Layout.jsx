@@ -15,7 +15,7 @@ export default function Layout ({children}) {
                         <div className="text-base-content flex gap-6 text-base max-lg:mt-4 max-lg:flex-col lg:items-center">
                             <Link href="/" className="hover:text-primary nav-link">Home</Link>
                             <Link href="/about" className="hover:text-primary nav-link">About</Link>
-                            <Link href="/contact" className="hover:text-primary nav-link">Contact</Link>
+                            <Link href="/contacts" className="hover:text-primary nav-link">Contacts</Link>
                         </div>
                     </div>
                     <div className="navbar-end max-lg:hidden">

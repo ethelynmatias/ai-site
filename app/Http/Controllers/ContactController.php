@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreContactRequest;
 use App\Http\Requests\UpdateContactRequest;
 use App\Models\Contact;
+use Illuminate\Support\Facades\Cache;
 
 class ContactController extends Controller
 {
@@ -15,7 +16,11 @@ class ContactController extends Controller
     {
         $contacts = Contact::all();
 
-        return inertia('Contact/Contact', ['contacts'=>$contacts]);
+        Cache::store('redis')->put('test_key', 'hello redis', 600);
+        $testCache = Cache::store('redis')->get('test_key');
+
+
+        return inertia('Contact/Contact', ['contacts'=>$contacts,'redis'=>$testCache]);
     }
 
     /**

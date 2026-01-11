@@ -9,3 +9,8 @@ up:
 container:
 	@echo "Accessing docker container"
 	@docker compose exec app sh
+
+test-redis:
+	@echo "Accessing docker container"
+	@docker compose exec app php artisan tinker
+
