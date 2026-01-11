@@ -6,6 +6,7 @@ use App\Http\Requests\StoreContactRequest;
 use App\Http\Requests\UpdateContactRequest;
 use App\Models\Contact;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Redis;
 
 class ContactController extends Controller
 {
@@ -14,13 +15,23 @@ class ContactController extends Controller
      */
     public function index()
     {
+        // https://www.youtube.com/watch?v=fJ1beMSkIFs
+        // https://www.youtube.com/watch?v=qBxo6hW83jU&list=PL38wFHH4qYZVOnXxcS0NMGGmUsZky6JNG
+        // https://ph.jobstreet.com/job/89196057?tracking=TMC-AppViewed-asia-6-jobapplied
+        // profiling and debugging: https://www.youtube.com/watch?v=7PVRVGqzplc
+
         $contacts = Contact::all();
 
         Cache::store('redis')->put('test_key', 'hello redis', 600);
         $testCache = Cache::store('redis')->get('test_key');
 
+        Redis::set('test_r_key', 'hello redis');
+        $testCache2 = Redis::get('test_r_key');
 
-        return inertia('Contact/Contact', ['contacts'=>$contacts,'redis'=>$testCache]);
+        return inertia('Contact/Contact', [
+            'contacts'=>$contacts,
+            'redis'=>$testCache,
+            'redisa'=>$testCache2]);
     }
 
     /**
