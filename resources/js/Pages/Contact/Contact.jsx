@@ -40,7 +40,7 @@ export default function Contact({ contacts }) {
                                     dangerouslySetInnerHTML={{ __html: link.label }}
                                 />
                                 )
-                        ))}
+                            ))}
                         </div>
                     </div>
 
