@@ -20,18 +20,19 @@ class ContactController extends Controller
         // https://ph.jobstreet.com/job/89196057?tracking=TMC-AppViewed-asia-6-jobapplied
         // profiling and debugging: https://www.youtube.com/watch?v=7PVRVGqzplc
 
-        $contacts = Contact::all();
+        $contacts = Contact::latest()->paginate(5);
 
+        /*
         Cache::store('redis')->put('test_key', 'hello redis', 600);
         $testCache = Cache::store('redis')->get('test_key');
 
         Redis::set('test_r_key', 'hello redis');
         $testCache2 = Redis::get('test_r_key');
+        */
 
         return inertia('Contact/Contact', [
             'contacts'=>$contacts,
-            'redis'=>$testCache,
-            'redisa'=>$testCache2]);
+           ]);
     }
 
     /**
