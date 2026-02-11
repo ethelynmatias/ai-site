@@ -30,9 +30,11 @@ export default function Subscribe() {
                                 placeholder="First Name"
                                 value={data.first_name}
                                 onChange={(e) => setData("first_name", e.target.value)}
-                                className="border border-gray-300 rounded px-4 py-2"
+                                className={`border border-gray-300 rounded px-4 py-2 ${errors.first_name ? '!ring-red-500' : ''}`}
                                 required
                             />
+
+                            {errors.first_name && <p className="error">{errors.first_name}</p>}
 
                             <input
                                 type="text"
@@ -40,9 +42,11 @@ export default function Subscribe() {
                                 placeholder="Last Name"
                                 value={data.last_name}
                                 onChange={(e) => setData("last_name", e.target.value)}
-                                className="border border-gray-300 rounded px-4 py-2"
+                                className={`border border-gray-300 rounded px-4 py-2 ${errors.last_name ? '!ring-red-500' : ''}`}
                                 required
                             />
+
+                            {errors.last_name && <p className="error">{errors.last_name}</p>}
 
                             <input
                                 type="email"
@@ -50,11 +54,13 @@ export default function Subscribe() {
                                 value={data.email}
                                 placeholder="Email"
                                 onChange={(e) => setData("email", e.target.value)}
-                                className="border border-gray-300 rounded px-4 py-2"
+                                className={`border border-gray-300 rounded px-4 py-2 ${errors.email ? '!ring-red-500' : ''}`}
                                 required
                             />
 
-                            <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Subscribe</button>
+                            {errors.email && <p className="error">{errors.email}</p>}
+
+                            <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" disabled={processing}>Subscribe</button>
                         </form>
                     </div>
                 </div>

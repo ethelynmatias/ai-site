@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Subscription;
 use Illuminate\Http\Request;
 
 class SubscribeController extends Controller
@@ -19,6 +19,10 @@ class SubscribeController extends Controller
             'email'      => ['required', 'email', 'max:255']
         ]);
 
-        dd($request);
+        // Hardcode product_id = 1
+        $validated['product_id'] = 1;
+        $subscription = Subscription::create($validated);
+
+        return redirect('/');
     }
 }
