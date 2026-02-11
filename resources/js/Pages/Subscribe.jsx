@@ -10,7 +10,7 @@ export default function Subscribe() {
 
     function submit(e) {
         e.preventDefault()
-        post('/subscriptions')
+        post("/subscriptions");
     }
 
     console.log(useForm());
@@ -20,8 +20,9 @@ export default function Subscribe() {
             <div className="gap-18 md:pt-45 lg:gap-35 lg:pt-5.5 flex h-full flex-col justify-between  ">
                 <div className="flex-col items-left gap-6 justify-self-center px-4 text-left sm:px-6 lg:px-8">
                     <h1 className="title">Unlock Premium Access & Transform Your Experience</h1>
+
                     <div>
-                        <form>
+                        <form onSubmit={submit}>
 
                             <input
                                 type="text"

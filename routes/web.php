@@ -16,12 +16,14 @@ Route::get('/about', function(){
 
 Route::resource('contacts', ContactController::class);
 Route::resource('subscriptions', SubscribeController::class)
-    ->only(['index', 'create', 'store']);
+    ->only(['index','store']);
 
 //Route::get('/subscriptions', [SubscribeController::class, 'index'])->name('subscriptions.index');
 
 //Route::inertia('/contact', 'Contact/Contact');
 // Any route redirect to welcome
+
+/*
 Route::any('{slug}', function(){
    return inertia('Home',['name'=>'Eth']);
-}); //->when()
+}); //->when() */
