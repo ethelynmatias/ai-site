@@ -13,6 +13,7 @@ function Home({ name }) {
 Home.layout = page => <Layout children={page} />
 
 export default Home; */
+import { Link } from "@inertiajs/react"
 
 export default function Home({ name }) {
     return(
@@ -38,10 +39,10 @@ export default function Home({ name }) {
                             </svg>
                         </h1>
                         <p className="text-base-content/80 max-w-3xl">From automation to analytics, discover AI tools tailored to your needs. Make informed decisions with expert insights and user reviews.</p>
-                        <a href="#" className="btn btn-primary btn-gradient btn-lg">
+                        <Link href="/subscriptions" className="btn btn-primary btn-gradient btn-lg">
                             Get Started
                             <span className="icon-[tabler--arrow-right] size-5 rtl:rotate-180"></span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>

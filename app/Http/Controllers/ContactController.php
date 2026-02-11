@@ -32,7 +32,7 @@ class ContactController extends Controller
 
         return inertia('Contact/Contact', [
             'contacts'=>$contacts,
-           ]);
+        ]);
     }
 
     /**

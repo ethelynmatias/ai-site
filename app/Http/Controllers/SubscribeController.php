@@ -6,5 +6,13 @@ use Illuminate\Http\Request;
 
 class SubscribeController extends Controller
 {
-    //
+    public function index()
+    {
+        return inertia('Subscribe');
+    }
+
+    public function store(Request $request)
+    {
+
+    }
 }
