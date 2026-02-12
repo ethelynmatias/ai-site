@@ -1,12 +1,15 @@
 import { useForm } from "@inertiajs/react";
+import { useRoute } from '../../../../vendor/tightenco/ziggy';
 
 export default function Show({ contact }) {
 
+    const route = useRoute()
     const { delete : destroy } = useForm();
 
     function submit(e) {
         e.preventDefault()
-        destroy(`/contacts/${contact.id}`)
+        //destroy(`/contacts/${contact.id}`)
+        destroy(route('contacts.destroy', contact))
     }
 
     return (
