@@ -1,7 +1,11 @@
 import { Link } from "@inertiajs/react"
+import { useRoute } from '../../../../vendor/tightenco/ziggy';
 
 export default function Contact({ contacts }) {
-    console.log(contacts);
+    //console.log(contacts);
+
+    const route = useRoute()
+
     return(
         <>
             <section id="home">
@@ -19,6 +23,9 @@ export default function Contact({ contacts }) {
                                     </span>
                                 </div>
                                 <p className="font-medium">{contact.name}</p>
+                                {/*<Link href={`/contacts/${contact.id}`} className="text-link">Read more...</Link> */}
+
+                                <Link href={route('contacts.show', contact)} className="text-link">Read more...</Link>
                             </div>
                         ))}
                         <div className="flex gap-2 mt-6">

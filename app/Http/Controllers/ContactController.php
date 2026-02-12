@@ -56,7 +56,7 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        //
+        return inertia('Contact/Show',['contact' => $contact]);
     }
 
     /**
@@ -80,6 +80,8 @@ class ContactController extends Controller
      */
     public function destroy(Contact $contact)
     {
-        //
+        $contact->delete();
+
+        return redirect('/');
     }
 }
