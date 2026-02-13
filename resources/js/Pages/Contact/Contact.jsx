@@ -1,17 +1,20 @@
-import { Link } from "@inertiajs/react"
+import { Link, usePage } from "@inertiajs/react"
 import { useRoute } from '../../../../vendor/tightenco/ziggy';
 
 export default function Contact({ contacts }) {
-    //console.log(contacts);
 
-    const route = useRoute()
 
+    const route = useRoute();
+    const { flash } = usePage().props?.[0]
+    console.log(usePage());
     return(
         <>
             <section id="home">
                 <div className="gap-18 md:pt-45 lg:gap-35 lg:pt-5.5 flex h-full flex-col justify-between  ">
                     <div className="flex-col items-left gap-6 justify-self-center px-4 text-left sm:px-6 lg:px-8">
-
+                        {flash?.messages && (
+                            <div className="absolute top-24 right-6 bg-rose-500 p-2 rounded-md shadow-lg text-sm text-white">{flash.messages}</div>
+                        )}
                         {contacts.data.map(contact => (
                             <div key={contact.id} className="p-4 border-b">
                                 <div>

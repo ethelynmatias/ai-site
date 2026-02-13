@@ -82,6 +82,6 @@ class ContactController extends Controller
     {
         $contact->delete();
 
-        return redirect('/');
+        return redirect('/contacts')->with('message', 'Contact sucessfully deleted.');
     }
 }
