@@ -13,11 +13,15 @@ function Home({ name }) {
 Home.layout = page => <Layout children={page} />
 
 export default Home; */
-import { Link } from "@inertiajs/react"
+import { Link, Head, usePage } from "@inertiajs/react"
 
 export default function Home({ name }) {
+
+    const { component } = usePage();
+
     return(
         <>
+            <Head title={component} />
             <section id="home">
                 <div className="gap-18 md:pt-45 lg:gap-35 lg:pt-47.5 flex h-full flex-col justify-between bg-[url('../../img/free-layer-blur.png')] bg-cover bg-center bg-no-repeat py-8 pt-40 sm:py-16 md:gap-24 lg:py-24">
                     <div className="mx-auto flex max-w-[1280px] flex-col items-center gap-6 justify-self-center px-4 text-center sm:px-6 lg:px-8">

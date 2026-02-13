@@ -1,9 +1,12 @@
 
-import { Link } from '@inertiajs/react'
+import { Link, Head } from '@inertiajs/react'
 
 export default function Layout ({children}) {
     return (
         <>
+            <Head>
+                <meta head-key="description" name="description" content="Your page description" />
+            </Head>
             <header className="border-base-content/20 bg-base-100 py-0.25 fixed top-0 z-10 w-full border-b">
                 <nav className="navbar mx-auto max-w-[1280px] rounded-b-xl px-4 sm:px-6 lg:px-8">
                     <div className="w-full lg:flex lg:items-center lg:gap-2">
