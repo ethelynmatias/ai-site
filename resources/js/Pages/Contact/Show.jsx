@@ -1,4 +1,4 @@
-import { useForm } from "@inertiajs/react";
+import { Link, useForm } from "@inertiajs/react";
 import { useRoute } from '../../../../vendor/tightenco/ziggy';
 
 export default function Show({ contact }) {
@@ -22,6 +22,7 @@ export default function Show({ contact }) {
                             <form onSubmit={submit}>
                                 <button className="bg-red-500 rounded-md text-sm px-4 py-1 text-white">Delete</button>
                             </form>
+                            <Link href="" className="bg-green-500 rounded-md text-sm px-4 py-1 text-white">Update</Link>
                         </div>
                     </div>
 
