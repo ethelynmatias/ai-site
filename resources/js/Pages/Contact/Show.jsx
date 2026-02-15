@@ -22,7 +22,8 @@ export default function Show({ contact }) {
                             <form onSubmit={submit}>
                                 <button className="bg-red-500 rounded-md text-sm px-4 py-1 text-white">Delete</button>
                             </form>
-                            <Link href="" className="bg-green-500 rounded-md text-sm px-4 py-1 text-white">Update</Link>
+                            {/*<Link href={`/contacts/${contact.id}/edit`} className="bg-green-500 rounded-md text-sm px-4 py-1 text-white">Update</Link>*/}
+                            <Link href={route('contacts.edit', contact)} className="bg-green-500 rounded-md text-sm px-4 py-1 text-white">Update</Link>
                         </div>
                     </div>
 

@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateContactRequest;
 use App\Models\Contact;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redis;
+use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
@@ -64,15 +65,29 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
-        //
+        return inertia('Contact/Edit',['contact' => $contact]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateContactRequest $request, Contact $contact)
+    public function update(Request $request, Contact $contact)
     {
-        //
+        $validated = $request->validate([
+            'name'  => 'required|string|max:255',
+            'phone' => 'required|string|max:20',
+            'email' => 'required|email|max:255',
+            'body'  => 'nullable|string',
+        ]);
+
+        $contact->update($validated);
+
+        /*
+        return redirect()
+            ->back()
+            ->with('message', 'Contact updated successfully.');*/
+
+        return redirect('/contacts')->with('message', 'Contact updated sucessfully.');
     }
 
     /**
@@ -82,6 +97,6 @@ class ContactController extends Controller
     {
         $contact->delete();
 
-        return redirect('/contacts')->with('message', 'Contact sucessfully deleted.');
+        return redirect('/contacts')->with('message', 'Contact deleted sucessfully.');
     }
 }

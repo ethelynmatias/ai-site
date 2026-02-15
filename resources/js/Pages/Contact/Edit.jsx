@@ -1,20 +1,24 @@
 import { useForm } from "@inertiajs/react";
+import { useRoute } from '../../../../vendor/tightenco/ziggy';
 
-export default function Subscribe() {
+export default function Subscribe({ contact }) {
+    const route = useRoute()
 
     const { data, setData, put, errors, processing } = useForm({
-        name:"",
-        phone:"",
-        email:"",
-        body:""
+        name:contact.name,
+        phone:contact.phone,
+        email:contact.email,
+        body:contact.body
     })
 
     function submit(e) {
         e.preventDefault()
-        put("/contacts");
+        //put(`/contacts/${contact.id}`);
+
+        put(route('contacts.update', contact));
     }
 
-    console.log(useForm());
+    //console.log(useForm());
     return(
         <>
          <section id="home">
@@ -29,7 +33,7 @@ export default function Subscribe() {
                                 type="text"
                                 name="name"
                                 placeholder="Name"
-                                value={data.first_name}
+                                value={data.name}
                                 onChange={(e) => setData("name", e.target.value)}
                                 className={`border border-gray-300 rounded px-4 py-2 ${errors.name ? '!ring-red-500' : ''}`}
                                 required
@@ -41,8 +45,8 @@ export default function Subscribe() {
                                 type="text"
                                 name="phone"
                                 placeholder="Phone"
-                                value={data.last_phonename}
-                                onChange={(e) => setData("last_name", e.target.value)}
+                                value={data.phone}
+                                onChange={(e) => setData("Phone", e.target.value)}
                                 className={`border border-gray-300 rounded px-4 py-2 ${errors.phone ? '!ring-red-500' : ''}`}
                                 required
                             />

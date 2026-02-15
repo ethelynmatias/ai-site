@@ -13,7 +13,7 @@ export default function Subscribe() {
         post("/subscriptions");
     }
 
-    console.log(useForm());
+    //console.log(useForm());
     return(
         <>
          <section id="home">
