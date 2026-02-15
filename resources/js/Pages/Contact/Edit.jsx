@@ -46,7 +46,7 @@ export default function Subscribe({ contact }) {
                                 name="phone"
                                 placeholder="Phone"
                                 value={data.phone}
-                                onChange={(e) => setData("Phone", e.target.value)}
+                                onChange={(e) => setData("phone", e.target.value)}
                                 className={`border border-gray-300 rounded px-4 py-2 ${errors.phone ? '!ring-red-500' : ''}`}
                                 required
                             />

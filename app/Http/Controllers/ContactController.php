@@ -87,7 +87,7 @@ class ContactController extends Controller
             ->back()
             ->with('message', 'Contact updated successfully.');*/
 
-        return redirect('/contacts')->with('message', 'Contact updated sucessfully.');
+        return redirect('/contacts')->with('success', 'Contact updated sucessfully.');
     }
 
     /**
